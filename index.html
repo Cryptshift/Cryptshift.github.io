@@ -11,16 +11,15 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:       #0A0A0A;
-      --fg:       #EBEBEB;
-      --fg-dim:   #666;
-      --fg-mid:   #999;
-      --border:   #222;
-      --accent:   #EBEBEB;
+      --bg:          #0A0A0A;
+      --fg:          #EBEBEB;
+      --fg-dim:      #555;
+      --fg-mid:      #999;
+      --border:      #1E1E1E;
       --accent-blue: #4A7CF7;
-      --mono:     'JetBrains Mono', monospace;
-      --sans:     'Space Grotesk', sans-serif;
-      --heading:  'Archivo', sans-serif;
+      --mono:        'JetBrains Mono', monospace;
+      --sans:        'Space Grotesk', sans-serif;
+      --heading:     'Archivo', sans-serif;
     }
 
     html { scroll-behavior: smooth; color-scheme: dark; }
@@ -38,7 +37,6 @@
     a { color: inherit; text-decoration: none; }
     a:focus-visible { outline: 1px solid var(--fg); outline-offset: 4px; }
 
-    /* ── Layout ── */
     .wrap {
       max-width: 760px;
       margin: 0 auto;
@@ -61,7 +59,7 @@
     }
     .nav-name {
       font-family: var(--mono);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--fg-dim);
       letter-spacing: 0.02em;
     }
@@ -72,14 +70,13 @@
     }
     .nav-links a {
       font-family: var(--mono);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--fg-dim);
       letter-spacing: 0.04em;
       transition: color 120ms;
     }
     .nav-links a:hover { color: var(--fg); }
 
-    /* ── Page ── */
     main { padding-top: 52px; }
 
     /* ── Hero ── */
@@ -89,7 +86,7 @@
     }
     .hero-label {
       font-family: var(--mono);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: var(--fg-dim);
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -107,8 +104,8 @@
     .hero-desc {
       font-size: 1rem;
       color: var(--fg-mid);
-      max-width: 480px;
-      line-height: 1.7;
+      max-width: 500px;
+      line-height: 1.75;
       margin-bottom: 40px;
       font-weight: 300;
     }
@@ -119,7 +116,7 @@
     }
     .link-primary {
       font-family: var(--mono);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--bg);
@@ -130,7 +127,7 @@
     .link-primary:hover { opacity: 0.85; }
     .link-ghost {
       font-family: var(--mono);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--fg-dim);
@@ -138,16 +135,16 @@
       padding-bottom: 1px;
       transition: color 150ms, border-color 150ms;
     }
-    .link-ghost:hover { color: var(--fg); border-color: var(--fg-dim); }
+    .link-ghost:hover { color: var(--fg); border-color: #444; }
 
-    /* ── Sections ── */
+    /* ── Section scaffold ── */
     section {
       padding: 72px 0;
       border-bottom: 1px solid var(--border);
     }
     .section-num {
       font-family: var(--mono);
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       color: var(--fg-dim);
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -181,17 +178,16 @@
       font-weight: 300;
       max-width: 600px;
     }
-    .about-text + .about-text { margin-top: 16px; }
+    .about-text + .about-text { margin-top: 14px; }
     .about-meta {
       margin-top: 36px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0;
       border: 1px solid var(--border);
-      max-width: 480px;
+      max-width: 460px;
     }
     .meta-item {
-      padding: 16px 20px;
+      padding: 14px 18px;
       border-right: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
@@ -199,42 +195,97 @@
     .meta-item:nth-last-child(-n+2) { border-bottom: none; }
     .meta-label {
       font-family: var(--mono);
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       color: var(--fg-dim);
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
     .meta-value {
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       color: var(--fg);
       font-weight: 500;
+    }
+
+    /* ── Experience ── */
+    .exp-list { display: flex; flex-direction: column; gap: 0; }
+    .exp-item {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-item:first-child { border-top: 1px solid var(--border); }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+    .exp-role {
+      font-family: var(--heading);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+    }
+    .exp-period {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--fg-dim);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .exp-company {
+      font-size: 0.82rem;
+      color: var(--fg-mid);
+      margin-bottom: 14px;
+    }
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .exp-bullets li {
+      font-size: 0.875rem;
+      color: var(--fg-mid);
+      font-weight: 300;
+      line-height: 1.6;
+      padding-left: 16px;
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--fg-dim);
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      top: 3px;
     }
 
     /* ── Skills ── */
     .skills-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 0;
       border: 1px solid var(--border);
     }
     .skill-item {
-      padding: 14px 20px;
+      padding: 13px 18px;
       border-right: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-    .skill-item:last-child { border-right: none; }
     .skill-name {
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       font-weight: 500;
       color: var(--fg);
       margin-bottom: 2px;
     }
     .skill-note {
       font-family: var(--mono);
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       color: var(--fg-dim);
-      letter-spacing: 0.02em;
     }
 
     /* ── Projects ── */
@@ -249,11 +300,11 @@
       transition: opacity 150ms;
     }
     .project-row:first-child { border-top: 1px solid var(--border); }
-    .project-row:hover { opacity: 0.75; }
-    .project-row:hover .project-arrow { transform: translateX(3px); }
+    .project-row:hover { opacity: 0.7; }
+    .project-row:hover .project-arrow { transform: translateX(3px); color: var(--fg); }
     .project-title {
       font-family: var(--heading);
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       color: var(--fg);
@@ -262,7 +313,7 @@
     .project-desc {
       font-size: 0.875rem;
       color: var(--fg-mid);
-      line-height: 1.6;
+      line-height: 1.65;
       font-weight: 300;
       margin-bottom: 12px;
       max-width: 520px;
@@ -270,15 +321,25 @@
     .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
+      align-items: center;
     }
     .tag {
       font-family: var(--mono);
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       letter-spacing: 0.04em;
       color: var(--fg-dim);
       border: 1px solid var(--border);
-      padding: 3px 8px;
+      padding: 3px 7px;
+    }
+    .tag-private {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.04em;
+      color: #9CA3AF;
+      border: 1px solid #374151;
+      background: #111827;
+      padding: 3px 7px;
     }
     .project-link-col {
       display: flex;
@@ -287,12 +348,12 @@
     }
     .project-arrow {
       font-family: var(--mono);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--fg-dim);
       transition: transform 150ms, color 150ms;
-      white-space: nowrap;
     }
-    .project-row:hover .project-arrow { color: var(--fg); }
+    .project-no-link { cursor: default; }
+    .project-no-link:hover { opacity: 1; }
 
     /* ── Contact ── */
     .contact-line {
@@ -300,15 +361,14 @@
       color: var(--fg-mid);
       font-weight: 300;
       margin-bottom: 32px;
-      max-width: 480px;
-      line-height: 1.7;
+      max-width: 460px;
+      line-height: 1.75;
     }
     .contact-links {
       display: flex;
       flex-direction: column;
-      gap: 0;
       border: 1px solid var(--border);
-      max-width: 340px;
+      max-width: 360px;
     }
     .contact-link-row {
       display: flex;
@@ -317,27 +377,24 @@
       padding: 14px 18px;
       border-bottom: 1px solid var(--border);
       transition: background 150ms;
-      cursor: pointer;
     }
     .contact-link-row:last-child { border-bottom: none; }
     .contact-link-row:hover { background: #111; }
     .contact-link-label {
       font-family: var(--mono);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       color: var(--fg-dim);
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
     .contact-link-value {
-      font-size: 0.875rem;
+      font-size: 0.82rem;
       color: var(--fg);
     }
     .contact-link-row:hover .contact-link-value { color: var(--accent-blue); }
 
     /* ── Footer ── */
-    footer {
-      padding: 28px 0;
-    }
+    footer { padding: 28px 0; }
     footer .wrap {
       display: flex;
       justify-content: space-between;
@@ -347,7 +404,7 @@
     }
     footer p {
       font-family: var(--mono);
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       color: var(--fg-dim);
       letter-spacing: 0.04em;
     }
@@ -359,9 +416,11 @@
       h1 { font-size: 2.6rem; }
       .about-meta { grid-template-columns: 1fr; max-width: 100%; }
       .meta-item { border-right: none; }
+      .meta-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
       .meta-item:last-child { border-bottom: none; }
       .project-row { grid-template-columns: 1fr; }
       .project-link-col { display: none; }
+      .exp-header { flex-direction: column; gap: 4px; }
       .contact-links { max-width: 100%; }
     }
 
@@ -377,7 +436,7 @@
     <span class="nav-name">marcus recker</span>
     <ul class="nav-links">
       <li><a href="#about">about</a></li>
-      <li><a href="#skills">skills</a></li>
+      <li><a href="#experience">experience</a></li>
       <li><a href="#projects">projects</a></li>
       <li><a href="#contact">contact</a></li>
     </ul>
@@ -392,9 +451,9 @@
       <p class="hero-label">CS Student · UC San Diego</p>
       <h1>Marcus<br>Recker</h1>
       <p class="hero-desc">
-        I write C. I care about how memory works, how data structures
-        behave when the abstraction is stripped away, and how programs
-        interact with the operating system.
+        Systems programming, AI development, and full-stack engineering.
+        I've built healthcare automation pipelines, shipped production software
+        at a DSO, and written a lot of C.
       </p>
       <div class="hero-links">
         <a href="#projects" class="link-primary">View Projects</a>
@@ -409,14 +468,16 @@
       <p class="section-num">01 &mdash; About</p>
       <h2>Background</h2>
       <p class="about-text">
-        I'm a Computer Science student at UC San Diego focused on systems-level
-        programming. Most of my work lives in C — managing memory by hand,
-        implementing data structures from scratch, and understanding what
-        actually happens below the abstraction.
+        I'm a Computer Science student at UC San Diego. I've worked across the stack —
+        from low-level C and systems programming to AI/ML pipelines and full-stack
+        web development. Two summers of industry experience in healthcare tech at
+        a DSO, working on problems that involved real patient data and real
+        compliance constraints.
       </p>
       <p class="about-text">
-        I find satisfaction in writing code that's predictable, minimal,
-        and fast. No magic. No mystery.
+        I like working on things that matter operationally. If there's a manual
+        process that shouldn't be manual, or a system that needs to be reliable
+        and auditable, that's where I want to be.
       </p>
       <div class="about-meta" role="list">
         <div class="meta-item" role="listitem">
@@ -429,7 +490,7 @@
         </div>
         <div class="meta-item" role="listitem">
           <p class="meta-label">Focus</p>
-          <p class="meta-value">Systems Programming</p>
+          <p class="meta-value">Systems &amp; AI</p>
         </div>
         <div class="meta-item" role="listitem">
           <p class="meta-label">Status</p>
@@ -439,44 +500,39 @@
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills">
+  <!-- Experience -->
+  <section id="experience">
     <div class="wrap">
-      <p class="section-num">02 &mdash; Skills</p>
-      <h2>What I work with</h2>
-      <div class="skills-list" role="list">
-        <div class="skill-item" role="listitem">
-          <p class="skill-name">C</p>
-          <p class="skill-note">primary language</p>
+      <p class="section-num">02 &mdash; Experience</p>
+      <h2>Where I've worked</h2>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-role">AI Developer Intern</span>
+            <span class="exp-period">Summer 2024</span>
+          </div>
+          <p class="exp-company">Dental Service Organization (DSO)</p>
+          <ul class="exp-bullets">
+            <li>Built facial recognition systems for patient identity verification, working within HIPAA and patient confidentiality requirements.</li>
+            <li>Designed and implemented data pipelines handling PHI with strict access controls and audit logging.</li>
+            <li>Collaborated with clinical staff to understand workflow constraints and translate them into technical requirements.</li>
+          </ul>
         </div>
-        <div class="skill-item" role="listitem">
-          <p class="skill-name">Data Structures</p>
-          <p class="skill-note">lists · trees · maps</p>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-role">Full-Stack Developer Intern</span>
+            <span class="exp-period">Summer 2023</span>
+          </div>
+          <p class="exp-company">Dental Service Organization (DSO)</p>
+          <ul class="exp-bullets">
+            <li>Developed and maintained production web applications serving clinical and administrative users.</li>
+            <li>Built features across the stack — front-end UI through backend APIs and database queries.</li>
+            <li>Worked within a regulated environment where data correctness and auditability were non-negotiable.</li>
+          </ul>
         </div>
-        <div class="skill-item" role="listitem">
-          <p class="skill-name">Memory Management</p>
-          <p class="skill-note">malloc · pointers · GDB</p>
-        </div>
-        <div class="skill-item" role="listitem">
-          <p class="skill-name">Systems</p>
-          <p class="skill-note">UNIX · processes · I/O</p>
-        </div>
-        <div class="skill-item" role="listitem">
-          <p class="skill-name">Python</p>
-          <p class="skill-note">scripting · tools</p>
-        </div>
-        <div class="skill-item" role="listitem">
-          <p class="skill-name">Shell / Linux</p>
-          <p class="skill-note">bash · Valgrind · make</p>
-        </div>
-        <div class="skill-item" role="listitem">
-          <p class="skill-name">Algorithms</p>
-          <p class="skill-note">analysis · design</p>
-        </div>
-        <div class="skill-item" role="listitem">
-          <p class="skill-name">Git</p>
-          <p class="skill-note">version control</p>
-        </div>
+
       </div>
     </div>
   </section>
@@ -488,18 +544,48 @@
       <h2>Things I've built</h2>
       <div class="project-list">
 
-        <a href="https://github.com/Cryptshift" class="project-row" target="_blank" rel="noopener noreferrer">
+        <!-- EMR Automation — private, no external link -->
+        <div class="project-row project-no-link">
           <div>
-            <p class="project-title">Linked List Library</p>
+            <p class="project-title">Medical Data Entry Automation</p>
             <p class="project-desc">
-              Generic singly and doubly linked list implementation in C.
-              Full memory management, iterator support, and a custom
-              test harness. Zero memory leaks under Valgrind.
+              End-to-end pipeline that eliminates manual "print and retype" workflows between
+              Electronic Medical Records systems. Extracts structured fields from PDF exports,
+              normalizes and maps them via a declarative DSL, runs probabilistic patient matching,
+              and writes to the target EMR via API or RPA. Includes a human-in-the-loop review
+              queue for low-confidence fields and a full audit trail exportable to CSV or SIEM.
+              Handles PHI — HIPAA compliant with per-tenant encryption and redacted logs.
             </p>
             <div class="project-tags">
-              <span class="tag">C</span>
-              <span class="tag">Makefile</span>
-              <span class="tag">Valgrind</span>
+              <span class="tag">Python</span>
+              <span class="tag">Playwright</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Redis</span>
+              <span class="tag">FHIR / HL7</span>
+              <span class="tag">HIPAA</span>
+              <span class="tag-private">Private — PHI</span>
+            </div>
+          </div>
+          <div class="project-link-col">
+            <span class="project-arrow" aria-hidden="true">🔒</span>
+          </div>
+        </div>
+
+        <!-- NoWakeUpInDeepSleep -->
+        <a href="https://github.com/Cryptshift" class="project-row" target="_blank" rel="noopener noreferrer">
+          <div>
+            <p class="project-title">NoWakeUpInDeepSleep</p>
+            <p class="project-desc">
+              Apple Watch app that suppresses notifications and wake events during
+              detected deep sleep phases. Users set a flexible wake window rather
+              than a fixed alarm, letting the watch find the right moment to surface
+              them at a lighter sleep stage.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Swift</span>
+              <span class="tag">SwiftUI</span>
+              <span class="tag">HealthKit</span>
+              <span class="tag">watchOS</span>
             </div>
           </div>
           <div class="project-link-col">
@@ -507,19 +593,39 @@
           </div>
         </a>
 
+        <!-- LetMeSleep -->
+        <a href="https://github.com/Cryptshift" class="project-row" target="_blank" rel="noopener noreferrer">
+          <div>
+            <p class="project-title">LetMeSleep</p>
+            <p class="project-desc">
+              Discord bot that monitors ambient noise via microphone, measures decibel
+              levels, and automatically messages a loud roommate when they cross a
+              threshold — telling them exactly how many dB they're producing.
+              Built for the very specific problem of a league-playing roommate at 2am.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">discord.py</span>
+              <span class="tag">PyAudio</span>
+            </div>
+          </div>
+          <div class="project-link-col">
+            <span class="project-arrow">↗</span>
+          </div>
+        </a>
+
+        <!-- CryptShift -->
         <a href="https://github.com/Cryptshift/pa2-Cryptshift" class="project-row" target="_blank" rel="noopener noreferrer">
           <div>
             <p class="project-title">CryptShift</p>
             <p class="project-desc">
-              Command-line encryption utility implementing classical
-              cipher algorithms. Handles encode/decode with configurable
-              shift parameters and file I/O.
+              Command-line encryption utility implementing classical cipher algorithms
+              in C. Configurable shift parameters, file I/O, encode and decode modes.
             </p>
             <div class="project-tags">
               <span class="tag">C</span>
               <span class="tag">File I/O</span>
               <span class="tag">CLI</span>
-              <span class="tag">Ciphers</span>
             </div>
           </div>
           <div class="project-link-col">
@@ -527,17 +633,18 @@
           </div>
         </a>
 
-        <a href="https://github.com/Cryptshift/Cryptshift.github.io" class="project-row" target="_blank" rel="noopener noreferrer">
+        <!-- Linked List -->
+        <a href="https://github.com/Cryptshift" class="project-row" target="_blank" rel="noopener noreferrer">
           <div>
-            <p class="project-title">This Site</p>
+            <p class="project-title">Linked List Library</p>
             <p class="project-desc">
-              Static portfolio hosted on GitHub Pages. Pure HTML and CSS —
-              no frameworks, no build step, no dependencies.
+              Generic singly and doubly linked list implementation in C with full memory
+              management, iterator support, and a custom test harness. Zero leaks under Valgrind.
             </p>
             <div class="project-tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">GitHub Pages</span>
+              <span class="tag">C</span>
+              <span class="tag">Makefile</span>
+              <span class="tag">Valgrind</span>
             </div>
           </div>
           <div class="project-link-col">
@@ -555,8 +662,8 @@
       <p class="section-num">04 &mdash; Contact</p>
       <h2>Get in touch</h2>
       <p class="contact-line">
-        Open to internships, research roles, and conversations about
-        systems programming. Reach out through any of the channels below.
+        Open to internships, research roles, and full-time opportunities after graduation.
+        Happy to talk systems, AI, healthcare tech, or anything else.
       </p>
       <div class="contact-links">
         <a href="mailto:marcusarecker@gmail.com" class="contact-link-row">
@@ -569,7 +676,7 @@
         </a>
         <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-link-row">
           <span class="contact-link-label">LinkedIn</span>
-          <span class="contact-link-value">Add your LinkedIn →</span>
+          <span class="contact-link-value">Add your URL →</span>
         </a>
       </div>
     </div>
