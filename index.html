@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marcus Recker</title>
+  <meta name="description" content="Marcus Recker, Artificial Intelligence student at UC San Diego. Builds AI agents and automation for healthcare operations." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Space+Grotesk:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -451,9 +452,9 @@
       <p class="hero-label">AI Student · UC San Diego</p>
       <h1>Marcus<br>Recker</h1>
       <p class="hero-desc">
-        Artificial Intelligence student who builds things end-to-end.
-        I've shipped production software at a DSO, built healthcare automation
-        pipelines, and have hands-on experience in Python, C, and Java.
+        Artificial Intelligence student who builds AI agents end-to-end.
+        I automate back-office work for a dental service organization, and
+        I'm working toward research on making agents reliable.
       </p>
       <div class="hero-links">
         <a href="#projects" class="link-primary">View Projects</a>
@@ -469,15 +470,20 @@
       <h2>Background</h2>
       <p class="about-text">
         I'm an Artificial Intelligence student at UC San Diego. I've worked across
-        the stack — AI/ML pipelines, full-stack web development, and systems-level
-        programming in C. Two summers of industry experience in healthcare tech at
-        a DSO, building software that handled real patient data under real
-        compliance constraints.
+        the stack: LLM agents and automation, full-stack web development, and
+        systems programming in C. I've done three internships in healthcare tech,
+        two summers at CaseDrive and now DashCare Group, building software that
+        handles real patient data under real compliance constraints.
       </p>
       <p class="about-text">
         I like working on things that matter operationally. If there's a manual
         process that shouldn't be manual, or a system that needs to be reliable
         and auditable, that's where I want to be.
+      </p>
+      <p class="about-text">
+        Next, I want to research how to make AI agents reliable enough to trust
+        with real work. I'm looking to join a UCSD lab now and plan to apply to
+        PhD programs in fall 2027.
       </p>
       <div class="about-meta" role="list">
         <div class="meta-item" role="listitem">
@@ -490,11 +496,11 @@
         </div>
         <div class="meta-item" role="listitem">
           <p class="meta-label">Focus</p>
-          <p class="meta-value">AI / ML</p>
+          <p class="meta-value">LLM agents</p>
         </div>
         <div class="meta-item" role="listitem">
           <p class="meta-label">Status</p>
-          <p class="meta-value">Current Student</p>
+          <p class="meta-value">Graduating Fall 2027</p>
         </div>
       </div>
     </div>
@@ -509,10 +515,24 @@
 
         <div class="exp-item">
           <div class="exp-header">
+            <span class="exp-role">AI Automation Intern</span>
+            <span class="exp-period">Jun 2026 – Present</span>
+          </div>
+          <p class="exp-company">DashCare Group · On-site over summer, remote during the school year</p>
+          <ul class="exp-bullets">
+            <li>Build LLM-powered agents that turn plain-English requests into automated workflows across payroll, payments, and accounting.</li>
+            <li>Integrate with Gusto, QuickBooks Online, GoDaddy Poynt, and the practices' management software through APIs and browser automation.</li>
+            <li>Design for patient data from the start: read-only by default, sensitive data kept out of logs and alerts, and anything uncertain routed to a person.</li>
+            <li>Built monitoring that checks every automation, names what broke, and alerts the team.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
             <span class="exp-role">AI Developer Intern</span>
             <span class="exp-period">Summer 2024</span>
           </div>
-          <p class="exp-company">Dental Service Organization (DSO)</p>
+          <p class="exp-company">CaseDrive · Seattle, WA · On-site</p>
           <ul class="exp-bullets">
             <li>Built facial recognition systems for patient identity verification, working within HIPAA and patient confidentiality requirements.</li>
             <li>Designed and implemented data pipelines handling PHI with strict access controls and audit logging.</li>
@@ -525,7 +545,7 @@
             <span class="exp-role">Full-Stack Developer Intern</span>
             <span class="exp-period">Summer 2023</span>
           </div>
-          <p class="exp-company">Dental Service Organization (DSO)</p>
+          <p class="exp-company">CaseDrive · Seattle, WA · On-site</p>
           <ul class="exp-bullets">
             <li>Developed and maintained production web applications serving clinical and administrative users.</li>
             <li>Built features across the stack — front-end UI through backend APIs and database queries.</li>
@@ -544,68 +564,79 @@
       <h2>Things I've built</h2>
       <div class="project-list">
 
-        <!-- EMR Automation — private, no external link -->
+        <!-- Canvas Copilot -->
         <div class="project-row project-no-link">
           <div>
-            <p class="project-title">Medical Data Entry Automation</p>
+            <p class="project-title">Canvas Copilot</p>
             <p class="project-desc">
-              End-to-end pipeline that eliminates manual "print and retype" workflows between
-              Electronic Medical Records systems. Extracts structured fields from PDF exports,
-              normalizes and maps them via a declarative DSL, runs probabilistic patient matching,
-              and writes to the target EMR via API or RPA. Includes a human-in-the-loop review
-              queue for low-confidence fields and a full audit trail exportable to CSV or SIEM.
-              Handles PHI — HIPAA compliant with per-tenant encryption and redacted logs.
+              A local, read-only agent that watches UC San Diego's Canvas and my course
+              syllabi so no deadline slips by. UCSD doesn't let students create API tokens,
+              so it combines the Canvas calendar feed, each course's announcement feed, and
+              a Playwright harvester that reads syllabi, including course sites outside Canvas.
             </p>
             <div class="project-tags">
               <span class="tag">Python</span>
               <span class="tag">Playwright</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Redis</span>
-              <span class="tag">FHIR / HL7</span>
-              <span class="tag">HIPAA</span>
-              <span class="tag-private">Private — PHI</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">iCal / Atom</span>
             </div>
           </div>
-          <div class="project-link-col">
-            <span class="project-arrow" aria-hidden="true">🔒</span>
-          </div>
+          <div class="project-link-col"></div>
         </div>
 
-        <!-- NoWakeUpInDeepSleep -->
-        <a href="https://github.com/Cryptshift" class="project-row" target="_blank" rel="noopener noreferrer">
+        <!-- Voxtral Reader -->
+        <div class="project-row project-no-link">
           <div>
-            <p class="project-title">NoWakeUpInDeepSleep</p>
+            <p class="project-title">Voxtral Reader</p>
             <p class="project-desc">
-              Apple Watch app that suppresses notifications and wake events during
-              detected deep sleep phases. Users set a flexible wake window rather
-              than a fixed alarm, letting the watch find the right moment to surface
-              them at a lighter sleep stage.
+              Reads scientific papers aloud with Mistral's Voxtral text-to-speech model,
+              running locally on Apple Silicon. It extracts a PDF's text, cleans it up for
+              listening, and plays it back in a small web app. Nothing leaves the machine.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">MLX</span>
+              <span class="tag">Text-to-speech</span>
+            </div>
+          </div>
+          <div class="project-link-col"></div>
+        </div>
+
+        <!-- Realtime Guitar Tutor -->
+        <div class="project-row project-no-link">
+          <div>
+            <p class="project-title">Realtime Guitar Tutor</p>
+            <p class="project-desc">
+              A browser app that listens to a guitar through the microphone, detects pitch
+              in real time, and scores each note against a song for pitch and timing. It
+              shows beginner tabs as you play, has a step-by-step mode that waits for the
+              right note, and includes a tuner.
+            </p>
+            <div class="project-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Web Audio API</span>
+              <span class="tag">Pitch detection</span>
+              <span class="tag">Vite</span>
+            </div>
+          </div>
+          <div class="project-link-col"></div>
+        </div>
+
+        <!-- LetMeSleep -->
+        <a href="https://github.com/Cryptshift/LetMeSleep" class="project-row" target="_blank" rel="noopener noreferrer">
+          <div>
+            <p class="project-title">LetMeSleep</p>
+            <p class="project-desc">
+              An iPhone app that listens for noise, measures decibel levels, and has a
+              Discord bot message a loud roommate when they cross a threshold, telling them
+              exactly how many dB they're producing. Useful for roommates, neighbors, etc.
             </p>
             <div class="project-tags">
               <span class="tag">Swift</span>
               <span class="tag">SwiftUI</span>
-              <span class="tag">HealthKit</span>
-              <span class="tag">watchOS</span>
-            </div>
-          </div>
-          <div class="project-link-col">
-            <span class="project-arrow">↗</span>
-          </div>
-        </a>
-
-        <!-- LetMeSleep -->
-        <a href="https://github.com/Cryptshift" class="project-row" target="_blank" rel="noopener noreferrer">
-          <div>
-            <p class="project-title">LetMeSleep</p>
-            <p class="project-desc">
-              Discord bot that monitors ambient noise via microphone, measures decibel
-              levels, and automatically messages a loud roommate when they cross a
-              threshold — telling them exactly how many dB they're producing. Useful for roomates, neighbors, etc.
-            </p>
-            <div class="project-tags">
-              <span class="tag">Python</span>
-              <span class="tag">discord.py</span>
-              <span class="tag">PyAudio</span>
+              <span class="tag">AVFoundation</span>
+              <span class="tag">Discord API</span>
             </div>
           </div>
           <div class="project-link-col">
@@ -623,8 +654,8 @@
       <p class="section-num">04 &mdash; Contact</p>
       <h2>Get in touch</h2>
       <p class="contact-line">
-        Open to internships, research roles, and full-time opportunities after graduation.
-        Happy to talk systems, AI, healthcare tech, or anything else.
+        Open to research roles, internships, and full-time opportunities after graduation.
+        Happy to talk AI agents, systems, healthcare tech, or anything else.
       </p>
       <div class="contact-links">
         <a href="mailto:marcusarecker@gmail.com" class="contact-link-row">
